@@ -24,6 +24,7 @@ end
 
 function M.setMapping()
   -- TODO make this user adjustable
+  api.nvim_buf_set_keymap(M.buf_handle, 't', '\\', 'q', {})
   api.nvim_buf_set_keymap(M.buf_handle, 't', '<c-o>', '<c-\\><c-n>:LfOpen<CR>i', {})
   api.nvim_buf_set_keymap(M.buf_handle, 't', '<c-x>', '<c-\\><c-n>:LfSplit<CR>i', {})
   api.nvim_buf_set_keymap(M.buf_handle, 't', '<c-v>', '<c-\\><c-n>:LfVsplit<CR>i', {})

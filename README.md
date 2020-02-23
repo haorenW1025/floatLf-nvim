@@ -18,11 +18,17 @@ A simple neovim plugin that make you use the amazing file manager [lf](https://g
 
 ## Prerequisite
 
-- Only support neovim
+- Only support neovim(because the main control part of this plugin is written in lua)
 - requires [neovim-remote](https://github.com/mhinz/neovim-remote) and make sure you can find the  `nvr` executable. Install it easily with:
 ```bash
 pip3 install neovim-remote
 ```
+
+## Install
+
+- Install with any plugin manager by using the path on GitHub.
+`Plug 'haorenW1025/floatLf-nvim'`
+
 ## Usage
 
 - Use `:Lf_Toggle` to open lf window in floating window

@@ -36,11 +36,11 @@ pip3 install neovim-remote
 `let g:floatLf_autoclose = 1`
 - You can change the key mapping of opening file in lf by
 ```
-let g:floatLf_close = 'q'
-let g:floatLf_open = '<c-o>'
-let g:floatLf_split = '<c-x>'
-let g:floatLf_vsplit = '<c-v>'
-let g:floatLf_tab = '<c-t>'
+let g:floatLf_lf_close = 'q'
+let g:floatLf_lf_open = '<c-o>'
+let g:floatLf_lf_split = '<c-x>'
+let g:floatLf_lf_vsplit = '<c-v>'
+let g:floatLf_lf_tab = '<c-t>'
 ```
 - Note that these mapping will only be mapped locally to lf buffer so it won't affect other terminal buffer.
 

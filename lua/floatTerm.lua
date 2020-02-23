@@ -24,16 +24,23 @@ end
 
 function M.setMapping()
   -- TODO make this user adjustable
-  api.nvim_buf_set_keymap(M.buf_handle, 't', '\\', 'q', {})
-  api.nvim_buf_set_keymap(M.buf_handle, 't', '<c-o>', '<c-\\><c-n>:LfOpen<CR>i', {})
-  api.nvim_buf_set_keymap(M.buf_handle, 't', '<c-x>', '<c-\\><c-n>:LfSplit<CR>i', {})
-  api.nvim_buf_set_keymap(M.buf_handle, 't', '<c-v>', '<c-\\><c-n>:LfVsplit<CR>i', {})
-  api.nvim_buf_set_keymap(M.buf_handle, 't', '<c-t>', '<c-\\><c-n>:LfTab<CR>i', {})
+  local close = api.nvim_get_var("floatLf_lf_close")
+  local open = api.nvim_get_var("floatLf_lf_open")
+  local split = api.nvim_get_var("floatLf_lf_split")
+  local vsplit = api.nvim_get_var("floatLf_lf_vsplit")
+  local tab = api.nvim_get_var("floatLf_lf_tab")
+  api.nvim_buf_set_keymap(M.buf_handle, 't', close, '<c-\\><c-n>:call floatLf#delete_lf_buffer()<CR>', {})
+  api.nvim_buf_set_keymap(M.buf_handle, 't', open, '<c-\\><c-n>:lua lf.lfOpenFile()<CR>', {})
+  api.nvim_buf_set_keymap(M.buf_handle, 't', split, '<c-\\><c-n>:lua lf.lfSplitFile()<CR>', {})
+  api.nvim_buf_set_keymap(M.buf_handle, 't', vsplit, '<c-\\><c-n>:lua lf.lfVsplitFile()<CR>', {})
+  api.nvim_buf_set_keymap(M.buf_handle, 't', tab, '<c-\\><c-n>:lua lf.lfTabFile()<CR>', {})
 end
 
 function M.refocusFloatingWindow()
   api.nvim_set_current_win(M.win_handle)
   api.nvim_command("startinsert")
 end
+
+M.setMapping()
 
 return M

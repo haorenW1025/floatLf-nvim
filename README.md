@@ -27,7 +27,7 @@ pip3 install neovim-remote
 ## Install
 
 - Install with any plugin manager by using the path on GitHub.
-`Plug 'haorenW1025/floatLf-nvim'`
+```Plug 'haorenW1025/floatLf-nvim'```
 
 ## Usage
 

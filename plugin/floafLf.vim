@@ -11,7 +11,7 @@ endif
 
 if ! exists('g:floatLf_border')
     " disable border by default
-    let g:floatLf_border = 1
+    let g:floatLf_border = 0
 endif
 
 if ! exists('g:floatLf_topleft_border')

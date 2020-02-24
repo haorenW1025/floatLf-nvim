@@ -39,8 +39,11 @@ pip3 install neovim-remote
 ## Configuration
 
 - By default, lf will still be open if you open any files, you can change that by
-`let g:floatLf_autoclose = 1`
-- You can change the key mapping of opening file in lf by
+```
+let g:floatLf_autoclose = 1
+```
+
+- You can change the key mapping in lf by
 ```
 let g:floatLf_lf_close = 'q'
 let g:floatLf_lf_open = '<c-o>'
@@ -50,7 +53,21 @@ let g:floatLf_lf_tab = '<c-t>'
 ```
 - Note that these mapping will only be mapped locally to lf buffer so it won't affect other terminal buffer.
 
+- The floating window has no border by default, enable it by
+```
+let g:floatLf_border = 1
+```
+
+- Modify your border type by
+```
+let g:floatLf_topleft_border = "╔"
+let g:floatLf_topright_border = "╗"
+let g:floatLf_botleft_border = "╚"
+let g:floatLf_botright_border = "╝"
+let g:floatLf_vertical_border = "║"
+let g:floatLf_horizontal_border = "═"
+```
+
 ## Todo
-- Support border around floating window.
 - Support terminal size option.
 - Maybe support other file manager?

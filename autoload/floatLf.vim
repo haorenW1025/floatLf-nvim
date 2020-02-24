@@ -24,20 +24,20 @@ endfunction
 " HACK use two <CR> to prevent unexpected behavior
 function! floatLf#wrap_open(job_id)
     " echo a:cmd
-    call chansend(a:job_id, "\<CR>\<CR>nvr -c 'LfRefocus' -l $f \<CR>")
+    call chansend(a:job_id, "\<CR>\<CR>nvr -cc 'LfFocusPrev' -c 'LfRefocus' $f \<CR>")
 endfunction
 
 function! floatLf#wrap_split(job_id)
     " echo a:cmd
-    call chansend(a:job_id, "\<CR>\<CR>nvr -c 'LfRefocus' -l -o $f \<CR>")
+    call chansend(a:job_id, "\<CR>\<CR>nvr -cc 'LfFocusPrev' -c 'LfRefocus' -o $f \<CR>")
 endfunction
 
 function! floatLf#wrap_vsplit(job_id)
     " echo a:cmd
-    call chansend(a:job_id, "\<CR>\<CR>nvr -c 'LfRefocus' -l -O $f \<CR>")
+    call chansend(a:job_id, "\<CR>\<CR>nvr -cc 'LfFocusPrev' -c 'LfRefocus' -O $f \<CR>")
 endfunction
 
 function! floatLf#wrap_tab(job_id)
     " echo a:cmd
-    call chansend(a:job_id, "\<CR>\<CR>nvr -c 'LfRefocus' -l -p $f \<CR>")
+    call chansend(a:job_id, "\<CR>\<CR>nvr -cc 'LfFocusPrev' -c 'LfRefocus' -p $f \<CR>")
 endfunction

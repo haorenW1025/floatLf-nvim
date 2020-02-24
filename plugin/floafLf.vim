@@ -9,6 +9,35 @@ if ! exists('g:floatLf_autoclose')
     let g:floatLf_autoclose = 0
 endif
 
+if ! exists('g:floatLf_border')
+    " disable border by default
+    let g:floatLf_border = 1
+endif
+
+if ! exists('g:floatLf_topleft_border')
+    let g:floatLf_topleft_border = "╔"
+endif
+
+if ! exists('g:floatLf_topright_border')
+    let g:floatLf_topright_border = "╗"
+endif
+
+if ! exists('g:floatLf_botleft_border')
+    let g:floatLf_botleft_border = "╚"
+endif
+
+if ! exists('g:floatLf_botright_border')
+    let g:floatLf_botright_border = "╝"
+endif
+
+if ! exists('g:floatLf_vertical_border')
+    let g:floatLf_vertical_border = "║"
+endif
+
+if ! exists('g:floatLf_horizontal_border')
+    let g:floatLf_horizontal_border = "═"
+endif
+
 if ! exists('g:floatLf_lf_close')
     " mapping of closing lf
     let g:floatLf_lf_close = 'q'
@@ -38,6 +67,7 @@ lua lf = require "lf"
 lua term = require "floatTerm"
 
 command! -nargs=0 LfRefocus  lua require'floatTerm'.refocusFloatingWindow()
+command! -nargs=0 LfFocusPrev  lua require'floatTerm'.focusPrevWindow()
 command! -nargs=0 LfToggle lua require'lf'.toggleLf()
 " command! -nargs=0 LfOpen lua require'lf'.lfOpenFile()
 " command! -nargs=0 LfSplit lua require'lf'.lfSplitFile()

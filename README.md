@@ -7,7 +7,7 @@ A simple neovim plugin that make you use the amazing file manager [lf](https://g
 
 ## Demo
 
-![floatLf](./floatLf_demo.gif)
+![floatLf](https://user-images.githubusercontent.com/35623968/75210925-70bb9b00-57bd-11ea-82b9-b5043bb4c3df.gif)
 
 
 ## Why lf?

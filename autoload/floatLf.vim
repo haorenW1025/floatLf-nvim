@@ -16,6 +16,12 @@ function! floatLf#delete_lf_buffer()
     endfor
 endfunction
 
+function! CleanupBuffer(buf)
+    if bufexists(a:buf)
+        silent execute 'bwipeout! '.a:buf
+    endif
+endfunction
+
 function! floatLf#wrap_term_open()
     let jobID = termopen('lf', {'on_exit': function('floatLf#on_exit')})
     return jobID

@@ -29,10 +29,9 @@ function M.createFloatingWindow()
     local top_border = top_left..string.rep(horizontal, width - 2)..top_right
     local mid_border = vertical..string.rep(" ", width - 2)..vertical
     local bot_border = bot_left..string.rep(horizontal, width - 2)..bot_right
-    local border_lines = top_border..string.rep(mid_border, height - 2)..bot_border
     local lines = {top_border}
-    for i=1, math.ceil(height)-2, 1 do
-      table.insert(lines, mid_border)    
+    for _=1, math.ceil(height)-2, 1 do
+      table.insert(lines, mid_border)
     end
     table.insert(lines, bot_border)
     M.buf_handle = api.nvim_create_buf(false, true)

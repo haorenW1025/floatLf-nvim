@@ -27,6 +27,12 @@ function! floatLf#wrap_term_open()
     return jobID
 endfunction
 
+function! floatLf#wrap_term_open_current_buf(path)
+    let jobID = termopen('cd '.(a:path).' && lf', {'on_exit': function('floatLf#on_exit')})
+    return jobID
+endfunction
+
+
 " HACK use two <CR> to prevent unexpected behavior
 function! floatLf#wrap_open(job_id)
     " echo a:cmd

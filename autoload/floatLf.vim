@@ -28,7 +28,7 @@ function! floatLf#wrap_term_open()
 endfunction
 
 function! floatLf#wrap_term_open_current_buf(path)
-    let jobID = termopen('cd '.(a:path).' && lf', {'on_exit': function('floatLf#on_exit')})
+    let jobID = termopen('lf '.(a:path), {'on_exit': function('floatLf#on_exit')})
     return jobID
 endfunction
 

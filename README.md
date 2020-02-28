@@ -31,8 +31,8 @@ pip3 install neovim-remote
 
 ## Usage
 
-- Use `:LfToggle` to open lf window in floating window
-- Use `:LfToggleCurrentBuf` if you want to open lf in the current directory of your buffer.
+- Use `:LfToggle` to open lf window in floating window.
+- Use `:LfToggleCurrentBuf` if you want to open lf and focus to the current buffer.
 - Just use your lf binding to go around and manipulate files.
 - `<c-o>`, `<c-x>`, `<c-v>` and `<c-t>` in lf can open file in current window, split, vertical split and tab.
 - Press `q` to quit out of lf window.

@@ -32,24 +32,30 @@ function! floatLf#wrap_term_open_current_buf(path)
     return jobID
 endfunction
 
+function! floatLf#get_callback()
+    if g:floatLf_autoclose == 1
+        return "-c 'call floatLf#delete_lf_buffer()'"
+    endif
+    retur " -c 'LfRefocus' "
+endfunction
 
 " HACK use two <CR> to prevent unexpected behavior
 function! floatLf#wrap_open(job_id)
-    " echo a:cmd
-    call chansend(a:job_id, "%%nvr -cc 'LfFocusPrev' -c 'LfRefocus' $f \<CR>")
+    let callback = floatLf#get_callback()
+    call chansend(a:job_id, "%%nvr  --servername $(nvr --serverlist) -cc 'LfFocusPrev' " . callback . " $f \<CR>")
 endfunction
 
 function! floatLf#wrap_split(job_id)
-    " echo a:cmd
-    call chansend(a:job_id, "%%nvr -cc 'LfFocusPrev' -c 'LfRefocus' -o $f \<CR>")
+    let callback = floatLf#get_callback()
+    call chansend(a:job_id, "%%nvr --servername $(nvr --serverlist) -cc 'LfFocusPrev' " . callback . " -o $f \<CR>")
 endfunction
 
 function! floatLf#wrap_vsplit(job_id)
-    " echo a:cmd
-    call chansend(a:job_id, "%%nvr -cc 'LfFocusPrev' -c 'LfRefocus' -O $f \<CR>")
+    let callback = floatLf#get_callback()
+    call chansend(a:job_id, "%%nvr --servername $(nvr --serverlist) -cc 'LfFocusPrev' " . callback . " -O $f \<CR>")
 endfunction
 
 function! floatLf#wrap_tab(job_id)
-    " echo a:cmd
-    call chansend(a:job_id, "%%nvr -cc 'LfFocusPrev' -c 'LfRefocus' -p $f \<CR>")
+    let callback = floatLf#get_callback()
+    call chansend(a:job_id, "%%nvr --servername $(nvr --serverlist) -cc 'LfFocusPrev' " . callback . " -p $f \<CR>")
 endfunction

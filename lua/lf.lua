@@ -25,30 +25,18 @@ end
 
 function M.lfOpenFile()
   api.nvim_call_function("floatLf#wrap_open", {M.jobID})
-  if api.nvim_get_var("floatLf_autoclose") == 1 then
-    M.toggleLf()
-  end
 end
 
 function M.lfSplitFile()
   api.nvim_call_function("floatLf#wrap_split", {M.jobID})
-  if api.nvim_get_var("floatLf_autoclose") == 1 then
-    M.toggleLf()
-  end
 end
 
 function M.lfVsplitFile()
   api.nvim_call_function("floatLf#wrap_vsplit", {M.jobID})
-  if api.nvim_get_var("floatLf_autoclose") == 1 then
-    M.toggleLf()
-  end
 end
 
 function M.lfTabFile()
   api.nvim_call_function("floatLf#wrap_tab", {M.jobID})
-  if api.nvim_get_var("floatLf_autoclose") == 1 then
-    M.toggleLf()
-  end
 end
 
 

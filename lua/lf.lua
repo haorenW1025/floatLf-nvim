@@ -2,11 +2,11 @@ local term = require 'floatTerm'
 local api = vim.api
 local M = {}
 
-function M.toggleLf()
+function M.toggleLf(bufpath)
   if term.buf_handle == nil or not api.nvim_buf_is_valid(term.buf_handle) then
     term.createFloatingWindow()
     api.nvim_command("startinsert")
-    M.jobID = api.nvim_call_function("floatLf#wrap_term_open", {})
+    M.jobID = api.nvim_call_function("floatLf#wrap_term_open", {bufpath})
   else
     api.nvim_call_function("floatLf#delete_lf_buffer", {})
   end

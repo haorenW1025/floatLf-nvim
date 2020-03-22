@@ -68,7 +68,7 @@ lua term = require "floatTerm"
 
 command! -nargs=0 LfRefocus  lua require'floatTerm'.refocusFloatingWindow()
 command! -nargs=0 LfFocusPrev  lua require'floatTerm'.focusPrevWindow()
-command! -nargs=0 LfToggle lua require'lf'.toggleLf()
+command! -nargs=* LfToggle call luaeval('lf.toggleLf(_A)', expand('<args>'))
 command! -nargs=0 LfToggleCurrentBuf lua require'lf'.toggleLf_current_buf()
 " command! -nargs=0 LfOpen lua require'lf'.lfOpenFile()
 " command! -nargs=0 LfSplit lua require'lf'.lfSplitFile()

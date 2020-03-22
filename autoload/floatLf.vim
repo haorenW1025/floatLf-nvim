@@ -22,8 +22,8 @@ function! CleanupBuffer(buf)
     endif
 endfunction
 
-function! floatLf#wrap_term_open()
-    let jobID = termopen('lf', {'on_exit': function('floatLf#on_exit')})
+function! floatLf#wrap_term_open(path)
+    let jobID = termopen('lf '.(a:path), {'on_exit': function('floatLf#on_exit')})
     return jobID
 endfunction
 

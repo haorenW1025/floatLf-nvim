@@ -36,7 +36,7 @@ function! floatLf#get_callback()
     if g:floatLf_autoclose == 1
         return "-c 'call floatLf#delete_lf_buffer()'"
     endif
-    retur " -c 'LfRefocus' "
+    return " -c 'LfRefocus' "
 endfunction
 
 " HACK use two <CR> to prevent unexpected behavior

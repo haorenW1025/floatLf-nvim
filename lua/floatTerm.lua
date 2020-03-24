@@ -58,11 +58,11 @@ function M.setMapping()
   local vsplit = api.nvim_get_var("floatLf_lf_vsplit")
   local tab = api.nvim_get_var("floatLf_lf_tab")
   local opts = {silent = true}
-  api.nvim_buf_set_keymap(M.buf_handle, 't', close, '<c-\\><c-n>:call floatLf#delete_lf_buffer()<CR>', opts)
-  api.nvim_buf_set_keymap(M.buf_handle, 't', open, '<c-\\><c-n>:lua lf.lfOpenFile()<CR>', opts)
-  api.nvim_buf_set_keymap(M.buf_handle, 't', split, '<c-\\><c-n>:lua lf.lfSplitFile()<CR>', opts)
-  api.nvim_buf_set_keymap(M.buf_handle, 't', vsplit, '<c-\\><c-n>:lua lf.lfVsplitFile()<CR>', opts)
-  api.nvim_buf_set_keymap(M.buf_handle, 't', tab, '<c-\\><c-n>:lua lf.lfTabFile()<CR>', opts)
+  api.nvim_buf_set_keymap(M.buf_handle, 't', close, '<cmd>call floatLf#delete_lf_buffer()<CR>', opts)
+  api.nvim_buf_set_keymap(M.buf_handle, 't', open, '<cmd>lua lf.lfOpenFile()<CR>', opts)
+  api.nvim_buf_set_keymap(M.buf_handle, 't', split, '<cmd>lua lf.lfSplitFile()<CR>', opts)
+  api.nvim_buf_set_keymap(M.buf_handle, 't', vsplit, '<cmd>lua lf.lfVsplitFile()<CR>', opts)
+  api.nvim_buf_set_keymap(M.buf_handle, 't', tab, '<cmd>lua lf.lfTabFile()<CR>', opts)
 end
 
 function M.focusPrevWindow()

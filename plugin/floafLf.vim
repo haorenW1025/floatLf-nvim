@@ -63,6 +63,10 @@ if ! exists('g:floatLf_lf_tab')
     let g:floatLf_lf_tab = '<c-t>'
 endif
 
+if ! exists('g:floatLf_exec')
+    let g:floatLf_exec = 'lf'
+endif
+
 lua lf = require "lf"
 lua term = require "floatTerm"
 

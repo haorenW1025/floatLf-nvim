@@ -14,7 +14,12 @@ end
 
 function M.toggleLf_current_buf()
   if term.buf_handle == nil or not api.nvim_buf_is_valid(term.buf_handle) then
-    local buf_path = api.nvim_call_function('expand', {'%:p'})
+    local buf_path
+    if api.nvim_get_var('floatLf_exec') == 'lf' then
+      buf_path = api.nvim_call_function('expand', {'%:p'})
+    else
+      buf_path = api.nvim_call_function('expand', {'%:p:h'})
+    end
     term.createFloatingWindow()
     api.nvim_command("startinsert")
     M.jobID = api.nvim_call_function("floatLf#wrap_term_open_current_buf", {buf_path})
